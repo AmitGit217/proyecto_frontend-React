@@ -1,9 +1,10 @@
-import Demo from "./Button"
+import Home from "./pages/Home"
+
 function App() {
 
   return (
     <>
-     <Demo />
+    <Home />
     </>
   )
 }
