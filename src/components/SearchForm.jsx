@@ -1,10 +1,15 @@
 import { Box, Input, Button, Field } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
+import { searchNews } from "../api";
 
 export default function SearchForm() {
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data.searchQuery);
+    // You can call your search function here with the search query
+    searchNews(data.searchQuery);
+  }
 
   return (
     <Box maxW="700px" mx="auto" mt="10">
