@@ -1,12 +1,12 @@
-import Home from "./pages/Home"
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import SearchResults from "./pages/SearchResults";
 
-function App() {
-
+export default function App() {
   return (
-    <>
-    <Home />
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/searchResults" element={<SearchResults />} />
+    </Routes>
+  );
 }
-
-export default App

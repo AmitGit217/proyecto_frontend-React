@@ -1,14 +1,17 @@
 import { Box, Input, Button, Field } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { searchNews } from "../api";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function SearchForm() {
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
+
 
   const onSubmit = (data) => {
     console.log(data.searchQuery);
-    // You can call your search function here with the search query
     searchNews(data.searchQuery);
+    navigate("/searchResults", { state: { searchQuery: data.searchQuery } });
   }
 
   return (
