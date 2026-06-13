@@ -8,10 +8,10 @@ export default function SearchForm() {
   const navigate = useNavigate();
 
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data.searchQuery);
-    searchNews(data.searchQuery);
-    navigate("/searchResults", { state: { searchQuery: data.searchQuery } });
+    const searchResults = await searchNews(data.searchQuery);
+    navigate("/searchResults", { state: { articles: searchResults.data } });
   }
 
   return (
