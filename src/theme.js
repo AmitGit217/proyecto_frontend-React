@@ -30,6 +30,7 @@ const customConfig = defineConfig({
       },
       fonts: {
         heading: { value: `'Roboto Slab', serif` },
+        heading_2: { value: `'Roboto', serif` },
         body:    { value: `'Source Sans 3', sans-serif` },
       },
       fontSizes: {

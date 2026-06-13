@@ -1,7 +1,12 @@
-import { Box, Container, Heading } from "@chakra-ui/react";
+import { Box, Container, Heading,  Input, Button } from "@chakra-ui/react";
 import bgImage from "../assets/main_bg_image.jpg";
+import { useForm } from "react-hook-form"
+import SearchForm from "../components/SearchForm";
+
 
 export default function Home() {
+  const { register, handleSubmit } = useForm();
+
   return (
     <Container
       maxW="container.lg"
@@ -38,6 +43,22 @@ export default function Home() {
         >
           NewsExplorer
         </Heading>
+      </Box>
+      <Box
+        as="main"
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        height="calc(100% - 80px)"
+      >
+        <Heading as="h2" fontFamily="heading_2" fontSize="2xl" fontWeight="bold" color="white" mb={4}>
+          Welcome to NewsExplorer
+        </Heading>
+        <Heading as="h3" fontFamily="heading_2" fontSize="sm" fontWeight="normal" color="white">
+          Explore the latest news from around the world.
+        </Heading>
+        <SearchForm />
       </Box>
     </Container>
   );
