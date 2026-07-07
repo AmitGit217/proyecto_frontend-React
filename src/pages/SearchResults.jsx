@@ -27,7 +27,8 @@ const SearchResults = () => {
         <For each={articles} fallback={<div>No results</div>}>
           {(article, index) => (
             <NewsCard
-              key={article.url || index}
+              key={index}
+              id={index}
               title={article.title}
               description={article.description}
               url={article.url}

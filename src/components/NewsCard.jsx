@@ -1,6 +1,15 @@
 import { Card, Image, Heading, Text, Box, Link } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
-const NewsCard = ({ title, description, url, urlToImage }) => {
+const NewsCard = ({ title, description, url, urlToImage, id }) => {
+    const navigate = useNavigate();
+
+
+    const handleClick = (id) => {
+        navigate(`/searchResults/${id}`, { state: { title, description, url, urlToImage } });
+    }
+
+    console.log("NewsCard props:", {  id });
   return (
     <Card.Root
       maxW="315px"
@@ -21,6 +30,7 @@ const NewsCard = ({ title, description, url, urlToImage }) => {
             w="100%"
             h="100%"
             objectFit="cover"
+            onClick={() => handleClick(id)}
           />
         </Box>
       
