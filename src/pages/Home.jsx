@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <Container
-      
+      height="100vh"
     >
       <Box
         as="header"
