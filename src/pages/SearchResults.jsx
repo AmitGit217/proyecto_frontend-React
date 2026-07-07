@@ -16,13 +16,14 @@ const SearchResults = () => {
         fontWeight="bold"
         color="white"
         textAlign="center"
-        mb={6}
+        mb={45}
         mt={0}
+        pt={25}
       >
         Search Results
       </Heading>
 
-      <Wrap spacing="40px" justify="center">
+      <Wrap  justify="center" >
         <For each={articles} fallback={<div>No results</div>}>
           {(article, index) => (
             <NewsCard

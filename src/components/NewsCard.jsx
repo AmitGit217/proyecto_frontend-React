@@ -13,19 +13,17 @@ const NewsCard = ({ title, description, url, urlToImage }) => {
       transition="all 0.2s"
       _hover={{ shadow: "cardHover", transform: "translateY(-2px)" }}
     >
-      {urlToImage ? (
+     
         <Box h="200px" overflow="hidden">
           <Image
-            src={urlToImage}
+            src={urlToImage ? urlToImage : "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"}
             alt={title}
             w="100%"
             h="100%"
             objectFit="cover"
           />
         </Box>
-      ) : (
-        <Box h="200px" bg="neutral.100" />
-      )}
+      
 
       <Card.Body p="card-p">
         <Heading fontFamily="heading" size="md"  mb={2} lineHeight="1.3">

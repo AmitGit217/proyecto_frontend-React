@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import SearchResults from "./pages/SearchResults";
 import bgImage from "./assets/main_bg_image.jpg";
 import { Container } from "@chakra-ui/react";
+import SearchItem from "./pages/SearchItem";
 
 
 export default function App() {
@@ -22,6 +23,8 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/searchResults" element={<SearchResults />} />
+      <Route path="/searchResults/:id" element={<SearchItem />} /> 
+      <Route path="*" element={<Home />} />
     </Routes>
     </Container>
   );
