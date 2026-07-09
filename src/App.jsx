@@ -4,11 +4,14 @@ import SearchResults from "./pages/SearchResults";
 import bgImage from "./assets/main_bg_image.jpg";
 import { Container } from "@chakra-ui/react";
 import SearchItem from "./pages/SearchItem";
+import { ArticleProvider } from "./context/ArticleContext";
+
 
 
 export default function App() {
   return (
-    <Container  maxW="container.lg"
+    <ArticleProvider>
+      <Container  maxW="container.lg"
           height="100%"
           py="section-y"
           p={0}
@@ -27,5 +30,6 @@ export default function App() {
       <Route path="*" element={<Home />} />
     </Routes>
     </Container>
+    </ArticleProvider>
   );
 }

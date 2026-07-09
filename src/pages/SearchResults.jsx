@@ -1,6 +1,7 @@
-import { Container, Heading, Wrap, For } from "@chakra-ui/react";
+import { Box, Button, Container, For, Heading, Text, Wrap } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 import NewsCard from "../components/NewsCard";
+import BackButton from "../components/BackButton";
 
 const SearchResults = () => {
   const location = useLocation();
@@ -8,36 +9,44 @@ const SearchResults = () => {
   const articles = location.state?.articles ?? [];
 
   return (
-    <Container>
-      <Heading
-        as="h2"
-        fontFamily="heading_2"
-        fontSize="2xl"
-        fontWeight="bold"
-        color="white"
-        textAlign="center"
-        mb={45}
-        mt={0}
-        pt={25}
-      >
-        Search Results
-      </Heading>
+    <Box bg="bg.page" minH="100vh" py="section-y">
+      <Container maxW="7xl">
+       <BackButton />
 
-      <Wrap  justify="center" >
-        <For each={articles} fallback={<div>No results</div>}>
-          {(article, index) => (
-            <NewsCard
-              key={index}
-              id={index}
-              title={article.title}
-              description={article.description}
-              url={article.url}
-              urlToImage={article.image}
-            />
-          )}
-        </For>
-      </Wrap>
-    </Container>
+        <Heading
+          as="h1"
+          color="text.heading"
+          fontSize={{ base: "3xl", md: "4xl" }}
+          fontFamily="heading"
+          textAlign="center"
+          mb={12}
+        >
+          Search Results
+        </Heading>
+
+        <Wrap justify="center" gap={6}>
+          <For
+            each={articles}
+            fallback={
+              <Text color="text.muted" fontSize="lg">
+                No results found.
+              </Text>
+            }
+          >
+            {(article, index) => (
+              <NewsCard
+                key={article.url ?? index}
+                id={index}
+                title={article.title}
+                description={article.description}
+                url={article.url}
+                urlToImage={article.image}
+              />
+            )}
+          </For>
+        </Wrap>
+      </Container>
+    </Box>
   );
 };
 
