@@ -48,6 +48,7 @@ export default function Home() {
           Explore the latest news from around the world.
         </Heading>
         <SearchForm />
+        
       </Box>
     </Container>
   );

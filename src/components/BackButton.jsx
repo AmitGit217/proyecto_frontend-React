@@ -6,6 +6,7 @@ export default function BackButton() {
       variant="ghost"
       color="action.primary"
       borderRadius="full"
+      border="none"
       fontWeight="semibold"
       transition="0.2s"
       onClick={() => window.history.back()}

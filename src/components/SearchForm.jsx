@@ -2,21 +2,26 @@ import { Box, Input, Button, Field } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { searchNews } from "../api";
 import { Navigate, useNavigate } from "react-router-dom";
+import useLoading from "../hooks/useLoading";
+import Loading from "./Loading";
 
 export default function SearchForm() {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
+  const { startLoading, stopLoading, isLoading } = useLoading();
 
 
   const onSubmit = async (data) => {
+    startLoading();
     console.log(data.searchQuery);
     const searchResults = await searchNews(data.searchQuery);
     navigate("/searchResults", { state: { articles: searchResults.data } });
+    stopLoading();
   }
 
   return (
     <Box maxW="700px" mx="auto" mt="10">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      {isLoading ? <Loading /> : <form onSubmit={handleSubmit(onSubmit)}>
         <Field.Root>
           <Box
             display="flex"
@@ -55,7 +60,8 @@ export default function SearchForm() {
             </Button>
           </Box>
         </Field.Root>
-      </form>
+      </form>}
+      
     </Box>
   );
 }

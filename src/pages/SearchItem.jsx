@@ -47,15 +47,14 @@ export default function SearchItem() {
     : null;
 
   return (
-    <Box bg="bg.page" minH="100vh" py="section-y">
-      <Container maxW="4xl" h="100%">
+    <Box display="flex" bg="bg.page" minH="100vh" py="section-y" alignItems="center" justifyContent="center">
+      <Container maxW="4xl" h="100vh"  px="section-x" maxW="500px">
         <Box
           bg="bg.card"
           borderRadius="lg"
           p="card-p"
           shadow="card"
         >
-          {/* Source */}
           <HStack gap={3} mb={5}>
             <Box
               w="28px"
@@ -74,7 +73,6 @@ export default function SearchItem() {
             </Text>
           </HStack>
 
-          {/* Title */}
           <Heading
             color="text.heading"
             fontSize={{
@@ -86,7 +84,6 @@ export default function SearchItem() {
             {selectedArticle.title}
           </Heading>
 
-          {/* Metadata */}
           <HStack
             gap={3}
             mb={8}
@@ -112,7 +109,6 @@ export default function SearchItem() {
             )}
           </HStack>
 
-          {/* Image */}
           <Box
             overflow="hidden"
             borderRadius="lg"
@@ -133,7 +129,6 @@ export default function SearchItem() {
             />
           </Box>
 
-          {/* Description */}
           <Text
             color="text.body"
             fontSize={{
@@ -147,7 +142,6 @@ export default function SearchItem() {
             {selectedArticle.description}
           </Text>
 
-          {/* Actions */}
           <HStack gap={4} flexWrap="wrap" alignItems="center" justifyContent="flex-start">
             <Link
               href={selectedArticle.url}
@@ -159,6 +153,7 @@ export default function SearchItem() {
                 bg="action.primary"
                 color="action.primaryText"
                 borderRadius="full"
+                border="none"
                 px={8}
                 _hover={{
                   bg: "action.primaryHover",
