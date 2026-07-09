@@ -11,8 +11,9 @@ export default function BackButton() {
       transition="0.2s"
       onClick={() => window.history.back()}
       _hover={{
-        bg: "brand.50",
-        color: "action.primaryHover",
+        bg: "brand.500",
+        color: "brand.50",
+        cursor: "pointer",
       }}
       _active={{
         bg: "brand.100",

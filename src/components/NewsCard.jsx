@@ -30,7 +30,7 @@ const NewsCard = ({ title, description, url, urlToImage, id }) => {
       overflow="hidden"
       shadow="card"
       transition="all 0.2s"
-      _hover={{ shadow: "cardHover", transform: "translateY(-2px)" }}
+      _hover={{ shadow: "cardHover", transform: "translateY(-2px)", cursor: "pointer" }}
       onClick={() => handleClick(id)}
     >
      

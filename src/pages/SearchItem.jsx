@@ -155,8 +155,12 @@ export default function SearchItem() {
                 borderRadius="full"
                 border="none"
                 px={8}
+                transition="0.2s"
                 _hover={{
-                  bg: "action.primaryHover",
+                  bg: "brand.50",
+                  color: "brand.500",
+                  cursor: "pointer",
+
                 }}
               >
                 Read Full Article

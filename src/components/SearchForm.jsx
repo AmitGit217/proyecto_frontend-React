@@ -20,7 +20,7 @@ export default function SearchForm() {
   }
 
   return (
-    <Box maxW="700px" mx="auto" mt="10">
+    <Box maxW="100vw" mx="auto" mt="10">
       {isLoading ? <Loading /> : <form onSubmit={handleSubmit(onSubmit)}>
         <Field.Root>
           <Box
@@ -54,6 +54,10 @@ export default function SearchForm() {
               color="#FFFFFF"
               border="none"
               fontWeight="600"
+              _hover={{
+                bg: "brand.500",
+                cursor: "pointer",
+              }}
            
             >
               Search

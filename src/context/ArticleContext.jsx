@@ -1,4 +1,3 @@
-// ArticleContext.jsx
 import { createContext, useState } from "react";
 
 export const ArticleContext = createContext();
