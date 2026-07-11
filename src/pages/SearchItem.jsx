@@ -47,7 +47,7 @@ export default function SearchItem() {
     : null;
 
   return (
-    <Box display="flex" bg="bg.page" minH="100%" py="section-y" padding="0" alignItems="center" justifyContent="center">
+    <Box display="flex" bg="bg.page" minH="100vh" py="section-y" padding="0" alignItems="center" justifyContent="center">
       <Container maxW="4xl" h="100%"  px="section-x" maxW="500px" padding="0">
         <Box
           bg="bg.card"

@@ -11,9 +11,9 @@ const SearchResults = () => {
 
   return (
     <Box  minH="100vh" py="section-y">
-      <Container maxW="7xl">
+      <Container maxW="7xl" display="flex" flexDirection="column" alignItems="center" px="section-x">
        
-      <Box display="flex" alignItems="center" mb={6} justifyContent="space-between"  alignItems="center">
+      <Box display="flex"  alignItems="center" mb={6} justifyContent="space-between" w="90%"  alignItems="center">
           <BackButton />
            <Heading
           as="h1"
