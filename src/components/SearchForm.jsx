@@ -64,6 +64,9 @@ export default function SearchForm() {
                 bg: "brand.500",
                 cursor: "pointer",
               }}
+              sx={{
+              WebkitAppearance: "none",
+            }}
            
             >
               Search
