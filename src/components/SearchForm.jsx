@@ -4,11 +4,13 @@ import { searchNews } from "../api";
 import { Navigate, useNavigate } from "react-router-dom";
 import useLoading from "../hooks/useLoading";
 import Loading from "./Loading";
+import { useState } from "react";
 
 export default function SearchForm() {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
   const { startLoading, stopLoading, isLoading } = useLoading();
+  const [chosenCategory, setChosenCategory] = useState(null);
 
 
   const onSubmit = async (data) => {
@@ -16,6 +18,8 @@ export default function SearchForm() {
     console.log(data.searchQuery);
     const searchResults = await searchNews(data.searchQuery);
     navigate("/searchResults", { state: { articles: searchResults.data } });
+    localStorage.setItem("searchResults", JSON.stringify(searchResults.data));
+    localStorage.setItem("searchQuery", chosenCategory);
     stopLoading();
   }
 
@@ -34,6 +38,7 @@ export default function SearchForm() {
           >
             <Input
               {...register("searchQuery")}
+              onChange={(e) => setChosenCategory(e.target.value)}
               placeholder="Search"
               border="none"
               autoComplete="off"
