@@ -51,6 +51,8 @@ export default function SearchForm() {
             />
 
             <Button
+              appearance="none"
+
               type="submit"
               h="57px"
               w="120px"
