@@ -1,5 +1,5 @@
 const searchNews = async (query) => {
-  const url = `https://api.mediastack.com/v1/news?access_key=${import.meta.env.VITE_API_KEY}&keywords=${query}&countries=us,gb,de&limit=25`;
+  const url = `https://api.mediastack.com/v1/news?access_key=${import.meta.env.VITE_API_KEY}&keywords=${query}&countries=us,gb,de,es&limit=25`;
   const response = await fetch(url);
   const data = await response.json();
   return data;
@@ -13,7 +13,7 @@ const fetchNextPage = async () => {
 
   const url = `https://api.mediastack.com/v1/news?access_key=${
     import.meta.env.VITE_API_KEY
-  }&keywords=${encodeURIComponent(searchQuery)}&countries=us,gb,de&limit=${limit}&offset=${currentOffset + 1}`;
+  }&keywords=${encodeURIComponent(searchQuery)}&countries=us,gb,de,es&limit=${limit}&offset=${currentOffset + 1}`;
 
   const response = await fetch(url);
   const data = await response.json();
