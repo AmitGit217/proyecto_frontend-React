@@ -36,6 +36,7 @@ export default function SearchForm() {
               {...register("searchQuery")}
               placeholder="Search"
               border="none"
+              autoComplete="off"
               h="52px"
               px="6"
               fontSize="md"

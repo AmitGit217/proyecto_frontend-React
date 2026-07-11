@@ -27,6 +27,7 @@ const NewsCard = ({ title, description, url, urlToImage, id }) => {
       borderWidth="1px"
       borderColor="border.card"
       borderRadius="md"
+      margin="7px auto"
       overflow="hidden"
       shadow="card"
       transition="all 0.2s"

@@ -47,8 +47,8 @@ export default function SearchItem() {
     : null;
 
   return (
-    <Box display="flex" bg="bg.page" minH="100vh" py="section-y" alignItems="center" justifyContent="center">
-      <Container maxW="4xl" h="100vh"  px="section-x" maxW="500px">
+    <Box display="flex" bg="bg.page" minH="100%" py="section-y" padding="0" alignItems="center" justifyContent="center">
+      <Container maxW="4xl" h="100%"  px="section-x" maxW="500px" padding="0">
         <Box
           bg="bg.card"
           borderRadius="lg"
@@ -154,6 +154,7 @@ export default function SearchItem() {
                 color="action.primaryText"
                 borderRadius="full"
                 border="none"
+                padding="0.5rem 1rem"
                 px={8}
                 transition="0.2s"
                 _hover={{

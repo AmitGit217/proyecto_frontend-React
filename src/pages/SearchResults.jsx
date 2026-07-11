@@ -2,6 +2,7 @@ import { Box, Button, Container, For, Heading, Text, Wrap } from "@chakra-ui/rea
 import { useLocation } from "react-router-dom";
 import NewsCard from "../components/NewsCard";
 import BackButton from "../components/BackButton";
+import JumpUpButton from "../components/JumpUpButton";
 
 const SearchResults = () => {
   const location = useLocation();
@@ -9,20 +10,23 @@ const SearchResults = () => {
   const articles = location.state?.articles ?? [];
 
   return (
-    <Box bg="bg.page" minH="100vh" py="section-y">
+    <Box  minH="100vh" py="section-y">
       <Container maxW="7xl">
-       <BackButton />
-
-        <Heading
+       
+      <Box display="flex" alignItems="center" mb={6} justifyContent="space-between"  alignItems="center">
+          <BackButton />
+           <Heading
           as="h1"
-          color="text.heading"
+          color="white"
           fontSize={{ base: "3xl", md: "4xl" }}
           fontFamily="heading"
           textAlign="center"
-          mb={12}
+         margin="0 auto"
         >
           Search Results
         </Heading>
+        </Box>
+       
 
         <Wrap justify="center" gap={6}>
           <For
@@ -46,6 +50,7 @@ const SearchResults = () => {
           </For>
         </Wrap>
       </Container>
+      <JumpUpButton />
     </Box>
   );
 };
